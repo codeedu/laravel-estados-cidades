@@ -17,7 +17,7 @@
             $.get('/get-cidades/' + idEstado, function (cidades) {
                 $('select[name=cidade]').empty();
                 $.each(cidades, function (key, value) {
-                    $('select[name=cidade]').append('<option value=' + value.id + '>' + value.nome + '</option>');
+                    $('select[name=cidade]').append('<option value=' + value.id + '>' + value.cidade + '</option>');
                 });
             });
         });
