@@ -17,7 +17,7 @@ class CidadeController extends Controller
 
     public function index()
     {
-        $estados = $this->estadoModel->lists('nome', 'id');
+        $estados = $this->estadoModel->lists('estado', 'id');
 
         return view('cidade', compact('estados'));
     }
@@ -25,7 +25,7 @@ class CidadeController extends Controller
     public function getCidades($idEstado)
     {
         $estado = $this->estadoModel->find($idEstado);
-        $cidades = $estado->cidades()->getQuery()->get(['id', 'nome']);
+        $cidades = $estado->cidades()->getQuery()->get(['id', 'cidade']);
         return Response::json($cidades);
     }
 
